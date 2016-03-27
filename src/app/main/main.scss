@@ -1,0 +1,38 @@
+
+h2.md-subheader{
+  font-family: Verdana;
+  font-size: 50px;
+  padding-top: 50px;
+}
+
+  md-list-item.md-2-line{
+    .wi{
+      font-size: 120px;
+      margin-right: 25px;
+    }
+
+    .md-list-item-text{
+      font-family: Verdana;
+      h3, h4 {
+        font-size: 65px;
+      }
+    }
+}
+
+.tick{
+  text{
+    font-size: 30px;
+  }
+}
+
+.nv-legend, .nv-axisMaxMin{
+  opacity: 0;
+}
+
+.nv-axis{
+  g{
+    text{
+      opacity: 0;
+    }
+  }
+}
