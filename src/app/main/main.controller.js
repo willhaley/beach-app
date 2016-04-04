@@ -6,18 +6,32 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($http) {
+  function MainController($http, tempature) {
 
     var main = this;
 
-    var url = 'https://www.worldtides.info/api?extremes&lat=35.595438&lon=-77.585250&key=6f535570-09f1-4aac-88bd-48d5dbb3e124';
+    main.timeFrame = ['Today', 'Tomorrow', 'Next'];
 
-   /* var tideCall = $http.get(url);
+    var tideUrl = 'https://www.worldtides.info/api?extremes&lat=35.595438&lon=-77.585250&key=6f535570-09f1-4aac-88bd-48d5dbb3e124';
+
+    var tideCall = $http.get(tideUrl);
         tideCall.then(function(data){
           main.data = sinAndCos(data.data);
         });
+
+    main.tempature = tempature;
+    main.tempature.daily.data = _.slice(tempature.daily.data, 0, 3);
+    console.log(tempature);
+/*
+    var tempUrl = 'https://api.forecast.io/forecast/4b087fe12683c3b471c85c74499920d5/34.3588100,-77.6366444';
+
+    var tempCall = $http.get(tempUrl);
+        tempCall.then(function(data){
+          main.temps = data;
+          console.log( data );
+        });
 */
-    var tides = {
+   /* var tides = {
       "status":200,
       "requestLat":35.595436,
       "requestLon":-77.58525,
@@ -35,9 +49,9 @@
         {"dt":1459160348,"date":"2016-03-28T10:19+0000","height":0.2846490378563123,"type":"High"},
         {"dt":1459184417,"date":"2016-03-28T17:00+0000","height":-0.27546926690824713,"type":"Low"}
       ]
-    };
+    };*/
 
-    main.data = sinAndCos(tides);
+  //  main.data = sinAndCos(tides);
 
     var dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
