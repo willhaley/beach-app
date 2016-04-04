@@ -1,24 +1,97 @@
+<md-content layout layout-align="center start" layout-fill xmlns="http://www.w3.org/1999/html">
 
-  <md-content layout="columns" layout-align="center start" layout-fill>
+    <!--
+        <md-list class="md-dense" flex="100">
+          <md-subheader class="md-no-sticky">Today</md-subheader>
+          <md-list-item class="md-2-line">
+            <i class="wi wi-night-sleet"></i>
+            <div class="md-list-item-text" layout="column">
+              <h3>85</h3>
+              <h4>55</h4>
+            </div>
+          </md-list-item>
+          <md-subheader class="md-no-sticky">Tomorrow</md-subheader>
+          <md-list-item class="md-2-line">
+            <i class="wi wi-night-sleet"></i>
+            <div class="md-list-item-text" layout="column">
+              <h3>85</h3>
+              <h4>55</h4>
+            </div>
+          </md-list-item>
+          <md-subheader class="md-no-sticky">Next</md-subheader>
+          <md-list-item class="md-2-line">
+            <i class="wi wi-night-sleet"></i>
+            <div class="md-list-item-text" layout="column">
+              <h3>85</h3>
+              <h4>55</h4>
+            </div>
+          </md-list-item>
+        </md-list>
+    -->
 
-    <md-list class="md-dense" flex="25">
-      <div ng-repeat-start="temp in main.tempature.daily.data"></div>
-      <md-subheader class="md-no-sticky">{{main.timeFrame[$index]}}</md-subheader>
-      <md-list-item class="md-2-line">
-        <i class="wi wi-forecast-io-{{temp.icon}}"></i>
-        <div class="md-list-item-text" layout="column">
-          <h3>{{temp.apparentTemperatureMax | number:0}}&deg;</h3>
-          <h4>{{temp.apparentTemperatureMin | number:0}}&deg;</h4>
+
+    <div flex layout>
+
+        <div flex ng-repeat="tide in main.tides[0]">
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 x="0px" y="0px" width="100%" height="250px" viewBox="-31.833 -30.788 283 283" overflow="visible" enable-background="new -31.833 -30.788 283 283" xml:space="preserve">
+
+            <g>
+              <clipPath id="SVGID_5_">
+                  <path id="SVGID_2_" d="M3.596,107.939c0,57.605,46.699,104.304,104.303,104.304c57.605,0,104.304-46.699,104.304-104.304c0-57.604-46.699-104.303-104.304-104.303C50.295,3.636,3.596,50.335,3.596,107.939"/>
+              </clipPath>
+
+              <g id="lowTide" ng-if="tide.type == 'Low'">
+                <path ng-if="tide.height >= -.2" clip-path="url(#SVGID_5_)" id="svg_7" d="m-1,139.5c16.66667,0.5 32.33333,-26 111,3.5c55.33333,20 106.66667,5 114,5c-2.33333,62.66667 -56.66667,67.33333 -124,69c-58.66667,1.16667 -104.33333,-28.66667 -101,-77.5z" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="#2B88B2"/>
+                <path ng-if="tide.height < -.2" stroke="null" fill="#2B88B2" stroke-width="null" stroke-opacity="null" fill-opacity="null" d="m-1,140.5c65.66667,22.5 -8.66667,-4 70,25.5c55.33333,20 74.66667,-15 155,-17c-2.33333,62.66667 -56.66667,67.33333 -124,69c-58.66667,1.16667 -104.33333,-28.66667 -101,-77.5z" id="svg_7" clip-path="url(#SVGID_5_)"/>
+              </g>
+
+              <g id="highTide"  ng-if="tide.type == 'High'">
+                <path ng-if="tide.height < .2" id="svg_2" d="m210.91145,47c0,0 -48.10626,-24 -74.45016,-3c-28.63468,22 -54.83319,-17 -95.48558,7c-33.21622,13 -55.76235,14 -73.81548,46c-9.1631,23 11.23765,86 53.61697,110c9.1631,10 90.48558,32 115.68409,31c25.19852,-1 72.15938,-20 82.46787,-33s27.48929,-27 32.07084,-54c4.58155,-27 -4.00885,-73 -13.17195,-82c-7.44502,-7 -26.9166,-21.5 -26.9166,-21.5" fill="#2B88B2" clip-path="url(#SVGID_5_)" stroke="null"/>
+                <path ng-if="tide.height >= .2" clip-path="url(#SVGID_5_)"  fill="#2B88B2" stroke="null" stroke-width="null" stroke-opacity="null" fill-opacity="null" d="m32,14.5c34.33333,-0.83333 3.66667,21.33333 103,-2.5c128.33333,-21.33333 94.66667,18.33333 85,110c17.33333,78 -28.33333,104 -104,99c-131.66667,-2.33333 -134.33333,-18.66667 -143,-100c-32.33333,-54.5 -7.66667,-106 59,-106.5z" id="svg_4"/>
+              </g>
+
+              <circle clip-path="url(#SVGID_6_)" fill="none" stroke="#2B88B2" stroke-width="2.858" cx="108" cy="108" r="104"/>
+              <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
+              <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_2" y="200" x="85" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.height | number:2}}</text>
+            </g>
+
+         </svg>
+
         </div>
-      </md-list-item>
-      <div ng-repeat-end></div>
-    </md-list>
 
-    <div flex="75">
-      <nvd3 options="main.options" data="main.data" class="with-3d-shadow with-transitions"></nvd3>
-      <div layout layout-align="center start" layou-fill>
-        <h3>Current</h3>
-      </div>
+    </div>
+    </md-content>
+    <md-content layout layout-align="center center" layout-fill layout-padding class="gridListdemoBasicUsage">
+    <div flex>
+        <md-grid-list
+                md-cols="7"
+                md-row-height="1:1"
+                md-gutter="12px">
+
+            <md-grid-tile class="yellow" layout="row" md-rowspan="3" ng-repeat="item in main.weather[0]">
+
+                <div class="weather-icon">
+                    <i class="wi
+                    wi-forecast-io-{{item.icon}}"></i>
+                </div>
+                <div class="weather-details" layout layout-align="center center">
+                    <div flex>
+                        {{item.temperatureMin|number:0}}&deg; | {{item.temperatureMax|number:0}}&deg;<br />
+                        <i class="wi wi-humidity"></i> {{item.humidity | percentageFilter}}%<br />
+                        <i class="wi wi-rain"></i> {{item.precipProbability | percentageFilter}}%<br />
+                        {{item.windSpeed | number:1}} <span>{{item.windBearing| degtoCardFilter}}</span>
+                    </div>
+                </div>
+                <md-grid-tile-footer>
+                    <h3>{{( item.time * 1000 ) | date:'EEEE'}}</h3>
+                </md-grid-tile-footer>
+
+            </md-grid-tile>
+
+        </md-grid-list>
+
     </div>
 
-  </md-content>
+    </md-content>

@@ -36,3 +36,38 @@ h2.md-subheader{
     }
   }
 }
+
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px;
+  h3{
+    font-family: Arial;
+    font-size:25px;
+  }
+}
+.gridListdemoBasicUsage .yellow {
+
+  background: #184E65;
+  color: #ffffff;
+
+  .weather-icon{
+    position: absolute;
+    left: 50px;
+    top: 40px;
+  }
+
+  .weather-details{
+    line-height: 70px;
+    text-align: center;
+    font-size: 40px;
+    i{
+      font-size:35px;
+    }
+  }
+  i{
+    font-size: 70px;
+  }
+  span{
+    font-size: 28px;
+  }
+}
