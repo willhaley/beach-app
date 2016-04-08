@@ -1,4 +1,4 @@
-<md-content layout layout-align="center start" layout-fill xmlns="http://www.w3.org/1999/html">
+<md-content layout layout-align="center start" layout-fill xmlns="http://www.w3.org/1999/html" ng-cloak>
 
     <!--
         <md-list class="md-dense" flex="100">
@@ -211,7 +211,7 @@
         <div flex layout layout-align="center center">
             <h1>
                 <i class="wi wi-thermometer"></i>
-                {{main.current.temperature}}&deg;
+                {{main.current.temperature | number:0}}&deg;
             </h1>
         </div>
         <div flex layout layout-align="center center">
@@ -233,7 +233,7 @@
         </div>
         <div flex layout layout-align="center center">
             <h1>
-                {{main.current.windSpeed | number:1}}<span>{{main.current.windBearing| degtoCardFilter}}</span>
+                {{main.current.windSpeed | number:0}}<span>{{main.current.windBearing| degtoCardFilter}}</span>
             </h1>
         </div>
 
