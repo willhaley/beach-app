@@ -6,13 +6,22 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($http) {
+  function MainController($timeout, $window) {
 
     var main = this;
-    var dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    main.tides = _.chunk(tides.extremes, 5);
-    main.weather = _.chunk(weather.daily.data, 7);
-    main.current = weather.currently;
-    console.info( 'weather', main.current );
+
+    function get_data(){
+      main.tides = _.chunk(tides.extremes, 5);
+      main.weather = _.chunk(weather.daily.data, 7);
+      main.current = weather.currently;
+    }
+
+    get_data();
+
+    $timeout ( function(){
+      $window.location.reload();
+    }, 600000);
+
+
   }
 })();
