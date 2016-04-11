@@ -56,7 +56,6 @@
               <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
               <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_2" y="200" x="85" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.height | number:2}}</text>
             </g>
-
          </svg>-->
             <span ng-if="tide.height < -.7">
                 <svg id="lowest" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 250 250" width="100%" height="215px">
@@ -67,8 +66,8 @@
                             <ellipse id="path3336-5-7" style="image-rendering:auto" rx="98.594" ry="97.718" stroke="#2B88B2" cy="109.87" cx="107.05" stroke-width="2.8116" fill="none"/>
                         </g>
                     </g>
-                    <g transform="translate(20 0)">
-                      <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
+                    <g transform="translate({{tide.date | tranformTimePositionFilter}})" class="tide-time">
+                        <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
                     </g>
                     <g transform="translate(15 35)">
                         <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_2" y="200" x="85" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.height | number:2}}</text>
@@ -84,7 +83,7 @@
                             <ellipse id="path3336-5-9-2" style="image-rendering:auto" rx="98.594" ry="97.718" stroke="#2B88B2" cy="114.73" cx="339.55" stroke-width="2.8116" fill="none"/>
                         </g>
                     </g>
-                    <g transform="translate(20 0)">
+                    <g transform="translate({{tide.date | tranformTimePositionFilter}})">
                         <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
                     </g>
                     <g transform="translate(15 35)">
@@ -101,7 +100,7 @@
                             <ellipse id="path3336-5-9-7-3" style="image-rendering:auto" rx="98.594" ry="97.718" stroke="#2B88B2" cy="114.73" cx="339.55" stroke-width="2.8116" fill="none"/>
                         </g>
                     </g>
-                    <g transform="translate(20 0)">
+                    <g transform="translate({{tide.date | tranformTimePositionFilter}})">
                         <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
                     </g>
                     <g transform="translate(15 35)">
@@ -118,7 +117,7 @@
                             <ellipse id="path3336-5-9-7" style="image-rendering:auto" rx="98.594" ry="97.718" stroke="#2B88B2" cy="114.73" cx="339.55" stroke-width="2.8116" fill="none"/>
                         </g>
                     </g>
-                    <g transform="translate(20 0)">
+                    <g transform="translate({{tide.date | tranformTimePositionFilter}})">
                         <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
                     </g>
                     <g transform="translate(15 35)">
@@ -137,7 +136,7 @@
                             <ellipse id="path3336-5-9" style="image-rendering:auto" rx="98.594" ry="97.718" stroke="#2B88B2" cy="114.73" cx="339.55" stroke-width="2.8116" fill="none"/>
                         </g>
                     </g>
-                    <g transform="translate(20 0)">
+                    <g transform="translate({{tide.date | tranformTimePositionFilter}})">
                         <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
                     </g>
                     <g transform="translate(15 35)">
@@ -154,10 +153,10 @@
                            <ellipse id="path3336-5" style="image-rendering:auto" rx="98.594" ry="97.718" stroke="#2B88B2" cy="109.87" cx="107.05" stroke-width="2.8116" fill="none"/>
                        </g>
                    </g>
-                   <g transform="translate(20 0)">
+                   <g transform="translate({{tide.date | tranformTimePositionFilter}})">
                        <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_2" y="110" x="35" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.date | date:'h:mm a'}}</text>
                    </g>
-                   <g transform="translate(15 35)">
+                   <g transform="translate(15 40)">
                        <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_2" y="200" x="85" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">{{tide.height | number:2}}</text>
                    </g>
                </svg>
@@ -238,3 +237,4 @@
         </div>
 
     </md-content>
+
