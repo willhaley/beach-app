@@ -71,3 +71,35 @@ h2.md-subheader{
     font-size: 28px;
   }
 }
+
+.current-status{
+  h1{
+    color: #184E65;
+    font-family: Arial;
+    font-size: 60px;
+    span{
+      font-size: 30px;
+    }
+    &.status{
+      i{
+        font-size:80px;
+      }
+    }
+  }
+
+  i{
+    color: #184E65;
+    font-size: 40px;
+
+  }
+}
+.current-heading{
+  padding-bottom: 0;
+  padding-top: 0;
+  h1{
+    font-family: Arial;
+    font-size: 40px;
+    color: #184E65;
+    margin-bottom: 0;
+  }
+}

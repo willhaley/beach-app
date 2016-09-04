@@ -64,13 +64,13 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
 });
 
-// Only applies for fonts from bower dependencies
-// Custom fonts are handled by the "other" task
-gulp.task('fonts', function () {
+// Only applies for font from bower dependencies
+// Custom font are handled by the "other" task
+gulp.task('font', function () {
   return gulp.src($.mainBowerFiles())
     .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
     .pipe($.flatten())
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/font/')));
 });
 
 gulp.task('other', function () {
@@ -90,4 +90,4 @@ gulp.task('clean', function (done) {
   $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], done);
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('build', ['html', 'font', 'other']);
